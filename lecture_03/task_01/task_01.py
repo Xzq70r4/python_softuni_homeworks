@@ -1,4 +1,4 @@
-FILE_PATH = './assets/catalog_sample.csv'  # or catalog_full.csv
+FILE_PATH = './../assets/catalog_sample.csv'  # or catalog_full.csv
 price_sum = 0
 price_count = 0
 
