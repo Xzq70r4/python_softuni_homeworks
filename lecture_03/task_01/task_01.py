@@ -10,6 +10,6 @@ with open(FILE_PATH, encoding='utf-8') as f:
         price_sum += float(current_price)  # for money must be use decimal - not learned yet
         price_count = idx
 
-average_sum = price_sum / price_count
+average_price = price_sum / price_count
 
-print('Average price: ', average_sum)
+print('Average price: ', average_price)
