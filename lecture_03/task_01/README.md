@@ -1,0 +1,1 @@
+Find average price from files in assets directory.
