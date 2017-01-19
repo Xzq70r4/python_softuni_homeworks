@@ -40,17 +40,16 @@ def find_file_path(search_folder: str, file_to_find: str) -> list:
 
 
 def validate_system_arguments(system_arguments: list) -> bool:
-
     """
 
     :param system_arguments: List of inputted arguments.
     :return Bool is parameters are correct or not.
     """
-    if len(sys.argv) < 3:
+
+    if len(system_arguments) < 3:
         print(INCORRECT_INPUT_MESSAGE)
         return False
-
-    elif not os.path.exists(sys.argv[1]):
+    elif not os.path.exists(system_arguments[1]):
         print(FOLDER_NOT_FOUND_MESSAGE)
         return False
     else:
