@@ -1,7 +1,6 @@
 import csv
+from lecture_05.task_01.constants import CATALOG_COLUMN_CATEGORY, CATALOG_COLUMN_ITEM_ID
 
-COLUMN_ITEM_ID = 0
-COLUMN_CATEGORY = 5
 
 def load_catalog(file_path: str) -> dict:
     """
@@ -28,8 +27,8 @@ def load_catalog(file_path: str) -> dict:
     with open(file_path, 'r', encoding='utf-8') as f:
         reader = csv.reader(f)
         for row in reader:
-            item_id = row[COLUMN_ITEM_ID]
-            category = row[COLUMN_CATEGORY]
+            item_id = row[CATALOG_COLUMN_ITEM_ID]
+            category = row[CATALOG_COLUMN_CATEGORY]
             result[item_id] = category
 
     return result
