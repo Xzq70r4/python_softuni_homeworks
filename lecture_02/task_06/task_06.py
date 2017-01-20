@@ -1,3 +1,4 @@
+
 people = [
     {
         'name': "Мария",
@@ -97,4 +98,4 @@ for idx_person_one, person_one in enumerate(people):
             mathes.append([person_one['name'], person_two['name'], interests_common])
 
 for match in mathes:
-    print(match[0] + "и" + match[1] + " - общ интерес: " + ", ".join(match[2]))
+    print(match[0] + " и " + match[1] + " - общ интерес: " + ", ".join(match[2]))
