@@ -1,5 +1,5 @@
-CATALOG_FILE_PATH = './../assets/catalog.csv'
-SALES_FILE_PATH = './../assets/sales-10K.csv'
+CATALOG_FILE_PATH = './assets/catalog.csv'
+SALES_FILE_PATH = './assets/sales-10K.csv'
 
 KEY_ITEM_ID = 'item_id'
 KEY_COUNTRY = 'country'

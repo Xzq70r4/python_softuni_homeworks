@@ -1,5 +1,5 @@
-from lecture_05.modulus.base.amouts_grouped_analyzer import AmountGroupedAnalyzer
 from lecture_05.task_01.constants import KEY_TS
+from lecture_05.task_01.modulus.base.amouts_grouped_analyzer import AmountGroupedAnalyzer
 
 
 class AmountsByHourAnalyzer(AmountGroupedAnalyzer):

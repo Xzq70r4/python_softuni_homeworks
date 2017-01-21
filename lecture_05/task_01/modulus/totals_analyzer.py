@@ -1,5 +1,5 @@
-from lecture_05.modulus.base.base_analyzer import BaseAnalyzer
 from lecture_05.task_01.constants import KEY_PRICE, KEY_TS
+from lecture_05.task_01.modulus.base.base_analyzer import BaseAnalyzer
 
 
 class TotalsAnalyzer(BaseAnalyzer):

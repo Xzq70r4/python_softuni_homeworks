@@ -1,10 +1,11 @@
-from lecture_05.modulus.amouts_by_category_analyzer import AmountsByCategoryAnalyzer
-from lecture_05.modulus.amouts_by_city_analyzer import AmountsByCityAnalyzer
-from lecture_05.modulus.amouts_by_hour_analyzer import AmountsByHourAnalyzer
-from lecture_05.modulus.catalog import load_catalog
-from lecture_05.modulus.sales import load_sales
-from lecture_05.modulus.totals_analyzer import TotalsAnalyzer
+from lecture_05.task_01.modulus.amouts_by_category_analyzer import AmountsByCategoryAnalyzer
+from lecture_05.task_01.modulus.amouts_by_city_analyzer import AmountsByCityAnalyzer
+from lecture_05.task_01.modulus.catalog import load_catalog
+from lecture_05.task_01.modulus.sales import load_sales
+from lecture_05.task_01.modulus.totals_analyzer import TotalsAnalyzer
+
 from lecture_05.task_01.constants import CATALOG_FILE_PATH, SALES_FILE_PATH
+from lecture_05.task_01.modulus.amouts_by_hour_analyzer import AmountsByHourAnalyzer
 
 
 def main():
