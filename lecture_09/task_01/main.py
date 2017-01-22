@@ -17,24 +17,9 @@ def main():
         equivalence_value = calculate_rate_in_base_currency(rates=rates, currency=input_currency,
                                                             amount_in_currency=input_amount)
 
-        if equivalence_value is None:
-            print("Can`t converts currency , because no have data for rates!!!")
-        else:
-            print('Equivalence in {}: {:.2f}'.format(DEFAULT_CURRENCY_TO_CONVERT, equivalence_value))
-
+        print_converted_value(converted_value=equivalence_value, base_currency=DEFAULT_CURRENCY_TO_CONVERT)
     else:
         print("Input amount must be positive number > 0")
-
-
-def calculate_rate_in_base_currency(rates: dict,
-                                    currency: str,
-                                    amount_in_currency: str) -> float:
-
-    exchange_rate = rates.get(currency, None)
-    if exchange_rate is not None:
-        return float(amount_in_currency) / float(exchange_rate)
-    else:
-        return None
 
 
 def get_exchange_rate(input_currency: str,
@@ -57,6 +42,25 @@ def get_exchange_rate(input_currency: str,
 
     except Exception as e:
         print("Error from server! ", str(e))
+
+
+def calculate_rate_in_base_currency(rates: dict,
+                                    currency: str,
+                                    amount_in_currency: str) -> float:
+
+    exchange_rate = rates.get(currency, None)
+    if exchange_rate is not None:
+        return float(amount_in_currency) / float(exchange_rate)
+    else:
+        return None
+
+
+def print_converted_value(converted_value: float, base_currency=DEFAULT_CURRENCY_TO_CONVERT):
+
+    if converted_value is None:
+        print("Can`t converts currency , because no have data for rates!!!")
+    else:
+        print('Equivalence in {}: {:.2f}'.format(base_currency, converted_value))
 
 
 if __name__ == '__main__':
