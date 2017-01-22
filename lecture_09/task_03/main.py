@@ -13,7 +13,7 @@ def main():
     input_amount = input('Input amount: ')
     input_currency_to_convert = input('Input currency to convert: ')
 
-    if input_amount.isdigit() and float(input_amount) > 0:
+    if input_amount.replace(".", "", 1).isdigit() and float(input_amount) > 0:
         url = URL_API + input_date
         rates = get_exchange_rate(base_currency=input_currency,
                                   api_url=url)

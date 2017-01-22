@@ -10,7 +10,7 @@ def main():
     input_currency = input_currency.upper()
     input_amount = input('Input amount: ')
 
-    if input_amount.isdigit() and float(input_amount) > 0:
+    if input_amount.replace(".", "", 1).isdigit() and float(input_amount) > 0:
         rates = get_exchange_rate(base_currency=DEFAULT_CURRENCY_TO_CONVERT, api_url=URL_API_LATEST)
 
         equivalence_value = calculate_rate_in_base_currency(rates=rates, currency=input_currency,
