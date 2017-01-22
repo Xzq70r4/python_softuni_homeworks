@@ -1,0 +1,1 @@
+Draw in loop from input length of the figure side and the angle.
