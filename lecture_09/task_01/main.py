@@ -2,35 +2,62 @@ import requests
 
 URL_API_LATEST = 'http://api.fixer.io/latest'
 DEFAULT_CURRENCY_TO_CONVERT = 'BGN'
-NO_DATA_VALUE = 'NO DATA'
 
-try:
+
+def main():
+
     input_currency = input('Input currency: ')
     input_currency = input_currency.upper()
     input_amount = input('Input amount: ')
 
     if input_amount.isdigit() and float(input_amount) > 0:
-        response = requests.get('http://api.fixer.io/latest', timeout=20,
+        rates = get_exchange_rate(input_currency=input_currency, base_currency=DEFAULT_CURRENCY_TO_CONVERT,
+                                  api_url=URL_API_LATEST)
+
+        equivalence_value = calculate_rate_in_base_currency(rates=rates, currency=input_currency,
+                                                            amount_in_currency=input_amount)
+
+        if equivalence_value is None:
+            print("Can`t converts currency , because no have data for rates!!!")
+        else:
+            print('Equivalence in {}: {:.2f}'.format(DEFAULT_CURRENCY_TO_CONVERT, equivalence_value))
+
+    else:
+        print("Input amount must be positive number > 0")
+
+
+def calculate_rate_in_base_currency(rates: dict,
+                                    currency: str,
+                                    amount_in_currency: str) -> float:
+
+    exchange_rate = rates.get(currency, None)
+    if exchange_rate is not None:
+        return float(amount_in_currency) / float(exchange_rate)
+    else:
+        return None
+
+
+def get_exchange_rate(input_currency: str,
+                      base_currency: str,
+                      api_url: str=URL_API_LATEST):
+
+    try:
+        response = requests.get(api_url, timeout=20,
                                 params={'symbols': '{},{}'.format(
-                                    DEFAULT_CURRENCY_TO_CONVERT, input_currency
+                                    base_currency, input_currency
                                 )})
 
         if response.status_code == 200:
             exchange_rates = response.json()
             rates = exchange_rates.get('rates', {})
-            currency_rate = rates.get(input_currency, NO_DATA_VALUE)
-            print("Current rates for {}/{}: ".format(DEFAULT_CURRENCY_TO_CONVERT, input_currency),
-                  currency_rate)
-
-            if currency_rate == NO_DATA_VALUE:
-                print("Can`t converts currency , because no have data for rate !!!")
-            else:
-                converted_currency = float(input_amount)/float(currency_rate)
-                print('Equivalence in {}: {:.2f}'.format(DEFAULT_CURRENCY_TO_CONVERT, converted_currency))
+            return rates
         else:
             print("Error from server: ", response.status_code)
-    else:
-        print("Input amount must be positive number > 0")
+            return None
 
-except Exception as e:
-    print("Error from server! ", str(e))
+    except Exception as e:
+        print("Error from server! ", str(e))
+
+
+if __name__ == '__main__':
+    main()
