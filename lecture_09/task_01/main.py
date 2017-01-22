@@ -11,8 +11,7 @@ def main():
     input_amount = input('Input amount: ')
 
     if input_amount.isdigit() and float(input_amount) > 0:
-        rates = get_exchange_rate(input_currency=input_currency, base_currency=DEFAULT_CURRENCY_TO_CONVERT,
-                                  api_url=URL_API_LATEST)
+        rates = get_exchange_rate(base_currency=DEFAULT_CURRENCY_TO_CONVERT, api_url=URL_API_LATEST)
 
         equivalence_value = calculate_rate_in_base_currency(rates=rates, currency=input_currency,
                                                             amount_in_currency=input_amount)
@@ -22,15 +21,12 @@ def main():
         print("Input amount must be positive number > 0")
 
 
-def get_exchange_rate(input_currency: str,
-                      base_currency: str,
-                      api_url: str=URL_API_LATEST):
+def get_exchange_rate(base_currency: str, api_url: str=URL_API_LATEST):
 
     try:
         response = requests.get(api_url, timeout=20,
-                                params={'symbols': '{},{}'.format(
-                                    base_currency, input_currency
-                                )})
+                                params={'base': base_currency}
+                                )
 
         if response.status_code == 200:
             exchange_rates = response.json()
