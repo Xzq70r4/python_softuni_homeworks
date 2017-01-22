@@ -3,6 +3,7 @@ Extend task_01
 ###Rules
  - input date that to use to convert currency
  - input currency to convert
+ 
  ###Examples
 ```
 Input date: 2017-01-19
