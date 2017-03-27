@@ -1,10 +1,14 @@
-###Task
+### Task
+
 Extend task_01
-###Rules
+
+### Rules
+
  - input date that to use to convert currency
  - input currency to convert
  
- ###Examples
+### Examples
+ 
 ```
 Input date: 2017-01-19
 Input currency: BGN
