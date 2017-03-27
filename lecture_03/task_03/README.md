@@ -1,7 +1,7 @@
 ### Task
 Up price from files in assets directory with 75% and save in another file.
 
-###CVS structure:
+### CVS structure:
  1. Catalog number
  2. Product name
  3. Product color/colors
