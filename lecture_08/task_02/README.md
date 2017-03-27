@@ -1,10 +1,14 @@
-###Task
+### Task
+
 Implement code that search city information for sale in database by console input.
-###Input
+
+### Input
+
 ```
 Please, input name of city: Sofia
 ```
-###Output
+### Output
+
 ```
 Product #G16909 date/hour: 2016-01-13T19:34:04+02:00 price: 30.07
 Product #661103 date/hour: 2015-12-15T08:35:17+02:00 price: 168.31
