@@ -1,6 +1,7 @@
 ### Task
 Read data from cvs files in asset folder and import into SQLite database.
-###CVS structure 'catalog.csv':
+
+### CVS structure 'catalog.csv':
  1. Id number
  2. Product name
  3. Product color/colors
@@ -21,7 +22,7 @@ Example of row of file:
 "34549","LTA SS2G C","RUNWHI/SHABLU/VAPOUR","FOOTWEAR","BASKETBALL","SHOES","SHOES (LOW)","Kid"
 ```
 
-###CVS structure 'sale-10K.csv':
+### CVS structure 'sale-10K.csv':
  1. Id number
  2. Country was carried sale (ISO code)
  3. Town was carried sale
