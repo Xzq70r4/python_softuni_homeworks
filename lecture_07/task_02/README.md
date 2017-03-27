@@ -1,4 +1,4 @@
-###Task
+### Task
 Extend previous task. Read input from JSON and YAML.
 
 ### Input
