@@ -1,7 +1,7 @@
 ### Task
 Find average price group by gender from files in assets directory.
 
-###CVS structure:
+### CVS structure:
  1. Catalog number
  2. Product name
  3. Product color/colors
