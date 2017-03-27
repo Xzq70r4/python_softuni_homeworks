@@ -1,6 +1,9 @@
-###Task
+### Task
+
 Implement currency converter. Use HTTP API - [http://fixer.io](http://fixer.io)
-###Example
+
+### Example
+
 ```
 Input currency: GBP
 Input amount: 15.34
