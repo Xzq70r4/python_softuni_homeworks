@@ -10,5 +10,5 @@ Enter a price (or 'stop'): 12.75
 Enter a price (or 'stop'): 22.5
 Enter a price (or 'stop'): stop
 
-###Output:
+### Output:
 Average price is: 10.03
